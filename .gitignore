@@ -1,0 +1,6 @@
+.cache
+.idea
+public
+node_modules
+gatsby-theme-*
+yarn.lock
