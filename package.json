@@ -1,4 +1,9 @@
 {
   "private": true,
-  "workspaces": ["gatsby-theme-serenity", "site"]
+  "workspaces": [
+    "gatsby-theme-serenity",
+    "site",
+    "gatsby-theme-conferencer",
+    "conference_site"
+  ]
 }
