@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import Layout from "../components/Layout";
 import SpeakerCard from "../components/SpeakerCard";
 import { default as Header } from "../components/HeaderHome";
-import Agenda from "../components/Agenda";
+import Agenda from "../components/AgendaContainer";
 import Footer from "../components/FooterContainer";
 import { graphql } from "gatsby";
 
@@ -49,9 +49,7 @@ export default function index({ data }) {
             );
           })}
         </section>
-        {configData.agenda.visible && (
-          <Agenda agenda={configData.agenda} speakers={configData.speakers} />
-        )}
+        {configData.agenda.visible && <Agenda />}
       </div>
       <Footer />
     </Layout>
@@ -86,14 +84,6 @@ export const query = graphql`
         }
         agenda {
           visible
-          time_slots
-          tracks {
-            name
-            content_in_slots {
-              type
-              content
-            }
-          }
         }
       }
     }

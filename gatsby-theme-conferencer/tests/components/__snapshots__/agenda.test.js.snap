@@ -36,9 +36,6 @@ exports[`Agenda renders correctly 1`] = `
               className="time"
             >
               10:00-11:00
-              11:00-12:00
-              13:00-13:30
-              13:30-15:00
             </td>
             <td>
               <p>
@@ -55,10 +52,7 @@ exports[`Agenda renders correctly 1`] = `
             <td
               className="time"
             >
-              10:00-11:00
               11:00-12:00
-              13:00-13:30
-              13:30-15:00
             </td>
             <td>
               <p>
@@ -75,10 +69,7 @@ exports[`Agenda renders correctly 1`] = `
             <td
               className="time"
             >
-              10:00-11:00
-              11:00-12:00
               13:00-13:30
-              13:30-15:00
             </td>
             <td>
               <p>
@@ -95,9 +86,6 @@ exports[`Agenda renders correctly 1`] = `
             <td
               className="time"
             >
-              10:00-11:00
-              11:00-12:00
-              13:00-13:30
               13:30-15:00
             </td>
             <td>

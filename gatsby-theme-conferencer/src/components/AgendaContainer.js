@@ -11,9 +11,7 @@ const AgendaContainer = () => (
           siteMetadata {
             agenda {
               time_slots
-              tracks {
-                name
-              }
+              tracks
               visible
             }
           }

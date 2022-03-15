@@ -22,31 +22,32 @@ const Agenda = ({ time_slots, tracks, agendaSlotMap }) => (
             </tr>
           </thead>
           <tbody>
-            {time_slots.map((slot, slot_index) => {
-              return (
-                <tr key={slot_index}>
-                  <td className="time">{time_slots}</td>
-                  {agendaSlotMap[slot].map((content_item, index) => {
-                    if (content_item.type === AgendaSlotType.SPEAKER) {
-                      return (
-                        <td key={index}>
-                          <a href={content_item.content.slug + "#talk"}>
-                            <h5>{content_item.content.talk.title}</h5>
-                            <p>{content_item.content.name}</p>
-                          </a>
-                        </td>
-                      );
-                    } else {
-                      return (
-                        <td key={index}>
-                          <p>{content_item.content}</p>
-                        </td>
-                      );
-                    }
-                  })}
-                </tr>
-              );
-            })}
+            {time_slots &&
+              time_slots.map((slot, slot_index) => {
+                return (
+                  <tr key={slot_index}>
+                    <td className="time">{slot}</td>
+                    {agendaSlotMap[slot].map((content, index) => {
+                      if (content.type === AgendaSlotType.SPEAKER) {
+                        return (
+                          <td key={index}>
+                            <a href={content.content.slug + "#talk"}>
+                              <h5>{content.content.talk.title}</h5>
+                              <p>{content.content.name}</p>
+                            </a>
+                          </td>
+                        );
+                      } else {
+                        return (
+                          <td key={index}>
+                            <p>{content.content}</p>
+                          </td>
+                        );
+                      }
+                    })}
+                  </tr>
+                );
+              })}
           </tbody>
         </table>
       </div>
