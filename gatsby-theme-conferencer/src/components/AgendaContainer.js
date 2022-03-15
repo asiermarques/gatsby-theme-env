@@ -1,5 +1,5 @@
 import React from "react";
-import agendaMapper from "../lib/agendaMapper";
+import AgendaMapper from "../lib/agendaMapper";
 import { graphql, StaticQuery } from "gatsby";
 import Agenda from "./Agenda";
 
@@ -48,8 +48,11 @@ const AgendaContainer = () => (
     `}
     render={(data) => (
       <Agenda
+        time_slots={data.site.siteMetadata.agenda.time_slots}
         tracks={data.site.siteMetadata.agenda.tracks}
-        agendaSlotMap={agendaMapper(
+        agendaSlotMap={AgendaMapper(
+          data.site.siteMetadata.agenda.time_slots,
+          data.site.siteMetadata.agenda.tracks,
           data.allAgendaContentYaml.nodes,
           data.allSpeakersYaml.nodes
         )}

@@ -2,10 +2,10 @@
 
 exports[`HeaderInner renders correctly 1`] = `
 <div
-  class="jumbotron"
+  className="jumbotron"
 >
   <div
-    class="container"
+    className="container"
   >
     <div
       className="row"
@@ -17,30 +17,21 @@ exports[`HeaderInner renders correctly 1`] = `
           href="/"
         >
           <h2
-            class="display-4"
-          >
-            Our awesome conference
-          </h2>
+            className="display-4"
+          />
         </a>
         <p
-          class="lead"
-        >
-          A great conference for developers and other mystical creatures
-        </p>
+          className="lead"
+        />
       </div>
       <div
         className="col-sm-5 text-center"
       >
-        <p>
-          100 early-bird tickets left
-        </p>
+        <p />
         <a
-          class="btn btn-primary btn-lg"
-          href="https://awesome_url_for_your_ticketing_platform.com"
+          className="btn btn-primary btn-lg"
           role="button"
-        >
-          Tickets on sale!
-        </a>
+        />
       </div>
     </div>
   </div>

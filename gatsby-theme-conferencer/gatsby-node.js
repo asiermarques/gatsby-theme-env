@@ -97,7 +97,7 @@ const createSpeakerPages = async (graphql, createPage, metadata) => {
       component: speakerTemplate,
       context: {
         speaker: node,
-        configData: metadata
+        configData: metadata,
       },
     });
   });

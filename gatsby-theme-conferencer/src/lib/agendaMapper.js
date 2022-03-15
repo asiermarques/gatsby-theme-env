@@ -1,23 +1,39 @@
 import { AgendaSlotType } from "./agendaSlotTypes";
 
-export const AgendaMapper = (agendaConfigData, speakers) => {
-  return agendaConfigData.time_slots.map((slot, index) => {
-    const content = agendaConfigData.tracks.map((track) => {
-      const track_content = track.content_in_slots[index];
-      const empty = { type: AgendaSlotType.TEXT, content: "" };
-
-      if (!track_content || !track_content.type) return empty;
-
-      return {
-        type: track_content.type,
-        content:
-          track_content.type === AgendaSlotType.SPEAKER
-            ? speakers.find((speaker) => speaker.slug === track_content.content)
-            : track_content.content,
-      };
+const AgendaMapper = (time_slots, tracks, contentConfig, speakers) => {
+  const result = {};
+  time_slots.forEach((slot) => {
+    result[slot] = [];
+    let remainingTracks = [...tracks];
+    tracks.forEach((track) => {
+      contentConfig.forEach((content) => {
+        if (content.slot === slot && content.track === track) {
+          result[slot].push({
+            type: content.type,
+            slot: slot,
+            track: content.track,
+            content:
+              content.type === AgendaSlotType.SPEAKER
+                ? speakers.find((speaker) => speaker.slug === content.content)
+                : content.content,
+          });
+          remainingTracks = remainingTracks.splice(
+            remainingTracks.indexOf(track),
+            -1
+          );
+        }
+      });
     });
-    content.unshift(slot);
-
-    return content;
+    remainingTracks.forEach((track) =>
+      result[slot].push({
+        type: AgendaSlotType.TEXT,
+        track: track,
+        slot: slot,
+        content: "-",
+      })
+    );
   });
+  return result;
 };
+
+export default AgendaMapper;

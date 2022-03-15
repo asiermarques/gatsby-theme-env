@@ -24,62 +24,90 @@ exports[`Agenda renders correctly 1`] = `
             <th />
             <th
               width="40%"
-            >
-              Olympia Room
-            </th>
+            />
             <th
               width="40%"
-            >
-              Niza
-            </th>
+            />
           </tr>
         </thead>
         <tbody>
           <tr>
             <td
-              class="time"
+              className="time"
             >
               10:00-11:00
-            </td>
-            <td>
-              <a
-                href="sara-smith#talk"
-              >
-                <h5>
-                  Talk title demo
-                </h5>
-                <p>
-                  Sara Smith
-                </p>
-              </a>
-            </td>
-            <td>
-              <a
-                href="sara-smith#talk"
-              >
-                <h5>
-                  Talk title demo
-                </h5>
-                <p>
-                  Sara Smith
-                </p>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="time"
-            >
               11:00-12:00
+              13:00-13:30
+              13:30-15:00
             </td>
             <td>
               <p>
-                test
+                -
               </p>
             </td>
             <td>
               <p>
-                test
+                -
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td
+              className="time"
+            >
+              10:00-11:00
+              11:00-12:00
+              13:00-13:30
+              13:30-15:00
+            </td>
+            <td>
+              <p>
+                -
+              </p>
+            </td>
+            <td>
+              <p>
+                -
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td
+              className="time"
+            >
+              10:00-11:00
+              11:00-12:00
+              13:00-13:30
+              13:30-15:00
+            </td>
+            <td>
+              <p>
+                -
+              </p>
+            </td>
+            <td>
+              <p>
+                -
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td
+              className="time"
+            >
+              10:00-11:00
+              11:00-12:00
+              13:00-13:30
+              13:30-15:00
+            </td>
+            <td>
+              <p>
+                -
+              </p>
+            </td>
+            <td>
+              <p>
+                -
               </p>
             </td>
           </tr>

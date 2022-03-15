@@ -2,34 +2,25 @@
 
 exports[`HeaderHome renders correctly 1`] = `
 <div
-  class="jumbotron"
+  className="jumbotron"
 >
   <div
-    class="container text-center"
+    className="container text-center"
   >
     <h1
-      class="display-4"
-    >
-      Our awesome conference
-    </h1>
-    <p
-      class="lead"
-    >
-      A great conference for developers and other mystical creatures
-    </p>
-    <hr
-      class="my-4"
+      className="display-4"
     />
-    <p>
-      100 early-bird tickets left
-    </p>
+    <p
+      className="lead"
+    />
+    <hr
+      className="my-4"
+    />
+    <p />
     <a
-      class="btn btn-primary btn-lg"
-      href="https://awesome_url_for_your_ticketing_platform.com"
+      className="btn btn-primary btn-lg"
       role="button"
-    >
-      Tickets on sale!
-    </a>
+    />
   </div>
 </div>
 `;

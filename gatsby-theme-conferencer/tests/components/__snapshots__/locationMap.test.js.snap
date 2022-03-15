@@ -5,30 +5,30 @@ exports[`LocationMap renders correctly 1`] = `
   id="where"
 >
   <h2
-    class="text-center"
+    className="text-center"
   >
     Location
   </h2>
   <div
-    class="content_wrap"
+    className="content_wrap"
   >
     <div
-      class="content"
+      className="content"
     >
       <div
-        class="container"
+        className="container"
       >
         <div
-          class="col-md-5 col-xs-12"
+          className="col-md-5 col-xs-12"
         >
           <div
-            class="card"
+            className="card"
           >
             <div
-              class="card-body"
+              className="card-body"
             >
               <div
-                class="address"
+                className="address"
               >
                 <h5>
                   Main Venue
@@ -59,8 +59,8 @@ exports[`LocationMap renders correctly 1`] = `
       </div>
     </div>
     <iframe
-      allowfullscreen="false"
-      frameborder="0"
+      allowFullScreen="false"
+      frameBorder="0"
       height="550"
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.255497835498!2d-2.947592084396059!3d43.26702288533392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDE2JzAxLjMiTiAywrA1Nic0My41Ilc!5e0!3m2!1ses!2ses!4v1543099024128"
       title="map"

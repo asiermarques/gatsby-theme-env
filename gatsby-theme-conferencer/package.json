@@ -52,7 +52,7 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
-    "lint:fix": "eslint --fix ./src",
+    "lint:fix": "yarn prettier --write . && eslint --fix ./src",
     "test": "yarn lint:fix && jest"
   }
 }
