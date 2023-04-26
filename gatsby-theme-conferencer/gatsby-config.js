@@ -1,101 +1,79 @@
-const defaultConfig = require("./config.js");
+const defaultConfig = require("./config");
+const path = require("path");
 
+/**
+ * @type {import('gatsby').GatsbyConfig}
+ */
 module.exports = (themeOptions) => {
   const config = Object.assign(defaultConfig, themeOptions);
 
   return {
     siteMetadata: config,
     plugins: [
-      {
-        resolve: "gatsby-source-filesystem",
-        options: {
-          path: "content",
-        },
-      },
-      {
-        resolve: "gatsby-source-filesystem",
-        options: {
-          path: `static/media`,
-          name: "media",
-        },
-      },
-      {
-        resolve: "gatsby-source-filesystem",
-        options: {
-          name: "assets",
-          path: `static`,
-        },
-      },
-      {
-        resolve: "gatsby-transformer-remark",
-        options: {
-          commonmark: true,
-          footnotes: true,
-          pedantic: true,
-          gfm: true,
-          plugins: [],
-        },
-      },
-      {
-        resolve: "gatsby-transformer-yaml",
-        options: {
-          resolve: `gatsby-source-filesystem`,
+        "gatsby-plugin-sass",
+        "gatsby-plugin-sitemap",
+        "gatsby-plugin-sharp",
+        "gatsby-transformer-sharp",
+        "gatsby-transformer-remark",
+        "gatsby-transformer-yaml",
+        "gatsby-plugin-image",
+        {
+          resolve: 'gatsby-plugin-manifest',
           options: {
-            path: `content`,
+            "icon": "static/images/favicon.png"
+          }
+        },
+        {
+            resolve: "gatsby-transformer-yaml",
+            options: {
+                resolve: `gatsby-source-filesystem`,
+                options: {
+                    path: `content`,
+                },
+            },
+        },
+        {
+            resolve: `gatsby-plugin-remote-images`,
+            options: {
+                nodeType: 'OrganizersYaml',
+                imagePath: 'image',
+                name: 'imageProcessed',
+            },
+        },
+        {
+          resolve: 'gatsby-source-filesystem',
+          options: {
+            "name": "images",
+            "path": `./static/images/`
           },
+          __key: "images"
         },
-      },
-      "gatsby-plugin-react-helmet",
-      {
-        resolve: "gatsby-plugin-sass",
-        options: {
-          cssLoaderOptions: {
-            camelCase: false,
-          },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `./content/speakers`,
+                name: "speaker"
+            },
         },
-      },
-      {
-        resolve: "gatsby-plugin-sitemap",
-        options: {
-          query: `
-                      {
-                        site {
-                          siteMetadata {
-                            siteUrl
-                          }
-                        }
-                        allSitePage(
-                          filter: {
-                            path: { regex: "/^(?!/404/|/404.html|/dev-404-page/)/" }
-                          }
-                        ) {
-                          nodes { 
-                            path 
-                          }
-                        }
-                      }
-                    `,
-          output: "/sitemap.xml",
-          serialize: ({ path, modifiedGmt }) => {
-            return {
-              url: path,
-              lastmod: modifiedGmt,
-            };
-          },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `./content/talks`,
+                name: "talk"
+            },
         },
-      },
-      {
-        resolve: `gatsby-plugin-sharp`,
-        options: {
-          defaults: {},
-          failOnError: false,
-          base64Width: 20,
-          forceBase64Format: `jpg`,
-          useMozJpeg: process.env.GATSBY_JPEG_ENCODER === `MOZJPEG`,
-          stripMetadata: true,
-          defaultQuality: 70,
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `./content/pages`,
+                name: "page"
+            },
         },
-      },
-    ],
-  };
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `./content/`,
+            },
+        }]
+  }
 };

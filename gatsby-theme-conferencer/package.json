@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-conferencer",
-  "version": "1.0.1",
+  "version": "1.0.17",
   "main": "index.js",
   "author": "Asier Marqués <asiermarques@gmail.com> (@asiermarques)",
   "license": "MIT",
@@ -12,47 +12,38 @@
     "conference landing page"
   ],
   "peerDependencies": {
-    "gatsby": "^3.14.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "gatsby": "^5.9.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "bootstrap": "^4.5.3",
-    "gatsby-plugin-google-fonts": "^1.0.1",
-    "gatsby-plugin-react-helmet": "^4.14.0",
-    "gatsby-plugin-sass": "^4.14.0",
-    "gatsby-plugin-sharp": "^3.14.0",
-    "gatsby-plugin-sitemap": "^4.10.0",
-    "gatsby-source-filesystem": "^3.14.0",
-    "gatsby-transformer-remark": "^4.11.0",
-    "gatsby-transformer-yaml": "^4.9.0",
-    "moment": "^2.29.1",
-    "node-sass": "6.0.1",
-    "react-helmet": "^6.1.0",
-    "react-icons": "^4.2.0"
-  },
-  "devDependencies": {
-    "babel-jest": "^27.2.4",
-    "babel-preset-gatsby": "^1.14.0",
-    "eslint": "^8.11.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-config-react-app": "^7.0.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.29.3",
-    "gatsby": "^3.14.1",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^27.2.4",
-    "jest-preset-gatsby": "^1.0.134",
-    "jest-serializer-react-helmet": "^1.0.6",
-    "prettier": "2.5.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-test-renderer": "^17.0.2"
+    "autoprefixer": "^10.4.14",
+    "bootstrap": "5.3.0-alpha3",
+    "gatsby-plugin-image": "^3.9.0",
+    "gatsby-plugin-manifest": "^5.9.0",
+    "gatsby-plugin-remote-images": "^3.6.5",
+    "gatsby-plugin-sass": "^6.9.0",
+    "gatsby-plugin-sharp": "^5.9.0",
+    "gatsby-plugin-sitemap": "^6.9.0",
+    "gatsby-source-filesystem": "^5.9.0",
+    "gatsby-transformer-remark": "^6.9.0",
+    "gatsby-transformer-sharp": "^5.9.0",
+    "gatsby-transformer-yaml": "^5.9.0",
+    "react-nl2br": "^1.0.4",
+    "react-social-icons": "^5.15.0",
+    "sass": "^1.62.0"
   },
   "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
     "build": "gatsby build",
-    "clean": "gatsby clean",
-    "lint:fix": "yarn prettier --write . && eslint --fix ./src",
-    "test": "yarn lint:fix && jest"
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "typescript": "^5.0.4"
   }
 }
